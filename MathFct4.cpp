@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <math.h> // Header files needed for Math functions
 
-double num; // Global variable
+double num, num2; // Global variable
 
 //Function title - Prints the title of program
 void title(){
@@ -32,8 +32,10 @@ void intro(){
 
 void userInput(){
     spacing(2,0);
-    printf("Enter a real number: ");
+    printf("Enter the first real number: ");
     scanf("%lf", &num);
+    printf("Enter the second real number");
+    scanf("%lf", &num2);
     getchar();
 }
 
@@ -44,8 +46,11 @@ void display(){
     answer = round(num);
     printf("%lf is rounded as %lf\n", num, answer);
     spacing(1, 30);
-    printf("%lf to the power of 3 is %lf\n", num, pow(num, 3));
-    printf("%lf rounded to the nearest integer is %lf\n");
+    printf("%lf to the power of %lf is %lf\n", num, num2, pow(num, num2));
+    spacing(1, 30);
+    printf("The square root of %lf is %lf\n", num, sqrt(num));
+    spacing(1, 30);
+    printf("%lf rounded up to the nearest integer is %d\n", num, ceil(num));
 }
 
 main(){

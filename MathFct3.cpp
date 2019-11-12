@@ -7,34 +7,39 @@
 
 #include <stdio.h>
 
-int hst;
-double price;
+double price, hst; // Global variable for the price and HST.
 
 // Function title - prints title of program.
 void title(){
     printf("\n%33sHST Calculator\n", "");
 }
 
+// Function intro - prints the title and program information.
 void intro(){
-    title();
-    printf("%14sThis program will calculate HST on any given amount.\n", "");
+    title(); // Prints title
+    printf("%14sThis program will calculate HST on any given amount.\n\n", "");
 }
 
+// Function userInpit - Gets user input for the price and HST.
 void userInput(){
     printf("Enter the price: ");
-    scanf("%lf", &price);
-    printf("Enter the HST as an integer: ");
-    scanf("%d", &hst);
+    scanf("%lf", &price); // Gets value for price
+    printf("Enter the HST: ");
+    scanf("%lf", &hst); // Gets value for HST
 }
 
-void display(double price, int hst){
-    printf("\nThe HST on $%.2lf is $%.2lf \n", price, (price * hst)/100);
-    printf("After tax, the total is: $%.2lf", price + (price * hst) / 100);
+
+//Function display - Calculates and displays the HST. 
+void display(double price, double hst){
+    hst = hst/100; // Divide HST by 100 to covert it to a %
+    printf("\nThe HST on $%.2lf is $%.2lf \n", price, price * hst);
+    printf("After HST, the total is: $%.2lf", price + (price * hst));
 }
 
+// Main function - Access point for the program.
 main(){
-    intro();
-    userInput();
-    display(price, hst);
+    intro(); // Prints title and program info
+    userInput(); // Gets user input
+    display(price, hst); // Displays HST
     getchar();
 }
