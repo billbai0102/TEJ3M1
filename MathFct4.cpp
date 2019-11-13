@@ -44,18 +44,22 @@ void userInput(){
 
 // Function display - Displays program excluding intro.
 void display(){
+    // Print rounded answer
     double ansRounded = round(num);
     spacing(2, 25);
     printf("%lf is rounded as %lf\n", num, ansRounded);
     
+    // Print exponented answer
     double ansPow = pow(num, num2);
     spacing(0, 17);
     printf("%lf to the power of %lf is %lf\n", num, num2, ansPow);
 
+    // Print square rooted answer
     double ansSqrt = sqrt(num);
     spacing(0, 20);
     printf("The square root of %lf is %lf\n", num, ansSqrt);
 
+    // Print answer rounded up
     double ansCeil = ceil(num);
     spacing(0, 13);
     printf("%lf rounded up to the nearest integer is %lf\n", num, ansCeil);
