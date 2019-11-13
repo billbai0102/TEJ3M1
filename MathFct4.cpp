@@ -2,13 +2,13 @@
     Name: Bill
     Teacher: Mr. Wong
     Date: 2019-11-08
-    This program demonstrates two new Math functions that are very useful.
+    This program demonstrates four functions and it's uses - round(), sqrt(). pow(), and ceil().
 */
 
 #include <stdio.h>
 #include <math.h> // Header files needed for Math functions
 
-double num, num2; // Global variable
+double num, num2; // Global variables
 
 //Function title - Prints the title of program
 void title(){
