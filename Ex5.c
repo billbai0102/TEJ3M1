@@ -15,13 +15,22 @@ int len, pos;
 
 // Introduction
 void intro(){
-    printf("See if you can understand strings!\n");
+    printf("%23sSee if you can understand strings!\n", "");
+}
+
+void pauseProgram(){
+    printf("\nPress Enter key to continue...");
+    getchar();
 }
 
 // User input
 void userInput(){
-    printf("Type any word: ");
+    printf("Type a string between 1 and 20 characters: ");
     gets(word); // TODO: REPLACE THIS
+    if(strlen(word) < 1 || strlen(word) > 20){
+        printf("\nPlease try again!\n");
+        userInput();
+    }
 }
 
 // Processing and output
@@ -36,12 +45,11 @@ void display(){
         printf("%s has an even number of letters.\n", word);
     }
 }
-//12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
 
 // Main program
 main(){
     intro();
     userInput();
     display();
-    getchar();
+    pauseProgram();
 }
