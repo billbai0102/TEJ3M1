@@ -17,40 +17,48 @@ void title(){
 
 // Function spacing - create a number of blank lines, and then a number of spaces based on calling arguments
 void spacing(int numOfLines, int numOfSpaces){
+    // Adds numOfLines blank lines
     for(int x = 0; x < numOfLines; x++)
         printf("\n");
+    // Adds numOfSpaces blank spaces 
     for(int x = 0; x < numOfSpaces; x++)
         printf(" ");
 }
 
-//Function intro - prints program's introduction.
+// Function intro - prints program's title and information.
 void intro(){
-    title();
+    title(); // Prints title
     spacing(0, 5);
-    printf("This program demonstrates two new Math functions that are very useful!");
+    printf("This program demonstrates four new Math functions that are very useful!");
 }
 
+// Function userInput - Obtains user input for num and num2
 void userInput(){
-    spacing(2,0);
+    spacing(2, 25);
     printf("Enter the first real number: ");
     scanf("%lf", &num);
-    printf("Enter the second real number");
+    spacing(0, 25);
+    printf("Enter the second real number: ");
     scanf("%lf", &num2);
-    getchar();
 }
 
-//Function display - Displays program excluding intro.
+// Function display - Displays program excluding intro.
 void display(){
-    double answer;
-    spacing(3, 30);
-    answer = round(num);
-    printf("%lf is rounded as %lf\n", num, answer);
-    spacing(1, 30);
-    printf("%lf to the power of %lf is %lf\n", num, num2, pow(num, num2));
-    spacing(1, 30);
-    printf("The square root of %lf is %lf\n", num, sqrt(num));
-    spacing(1, 30);
-    printf("%lf rounded up to the nearest integer is %d\n", num, ceil(num));
+    double ansRounded = round(num);
+    spacing(2, 25);
+    printf("%lf is rounded as %lf\n", num, ansRounded);
+    
+    double ansPow = pow(num, num2);
+    spacing(0, 17);
+    printf("%lf to the power of %lf is %lf\n", num, num2, ansPow);
+
+    double ansSqrt = sqrt(num);
+    spacing(0, 20);
+    printf("The square root of %lf is %lf\n", num, ansSqrt);
+
+    double ansCeil = ceil(num);
+    spacing(0, 13);
+    printf("%lf rounded up to the nearest integer is %lf\n", num, ansCeil);
 }
 
 main(){
