@@ -2,7 +2,7 @@
     Name: Bill
     Teacher: Mr. Wong
     Date: 2019-11-13
-    This program will calculate the HST on a given price.
+    This program demonstrates the use of if statements.
 */
 
 #include <stdio.h>
@@ -18,6 +18,7 @@ void intro(){
     printf("%23sSee if you can understand strings!\n", "");
 }
 
+// Pause the program 
 void pauseProgram(){
     printf("\nPress Enter key to continue...");
     getchar();
@@ -37,12 +38,14 @@ void userInput(){
 void display(){
     len = strlen(word);
 
-    if(len % 2 != 0){
+    if(len < 5){
+        printf("%s is smaller than 5 characters long\n", word);
+    }else if (len % 2 != 0 && len >= 5){
         printf("%s has an odd number of letters.\n", word);
         pos = len/2 + 1;
         printf("The middle letter is at position %d\n", pos);
-    }else{
-        printf("%s has an even number of letters.\n", word);
+    }else if (len % 2 == 0 && len >= 5){
+        printf("%s has an even number of letters.", word);
     }
 }
 
