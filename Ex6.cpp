@@ -6,6 +6,7 @@
 // Declaration section
 int num;
 int guess;
+int numOfGuesses = 0;
 
 // Pause program
 void pauseProgram(){
@@ -22,7 +23,7 @@ void title(char* programTitle){
     {
         printf(" ");
     }
-    printf("%s\n", programTitle);
+    printf("%s\n\n", programTitle);
 }
 
 // Function user input
@@ -33,16 +34,20 @@ void userInput(){
     getchar();
 }
 
-// Function displayRand
-void displayRand(){
+void randNum(){
     unsigned int iseed = (unsigned int)time(NULL);
     srand(iseed);
 
     num = rand() % 100;
     num = num + 1;
+}
+
+// Function displayRand
+void display(){
     title("Random Number");
     if(guess > num){
         printf("\nCome down!\n");
+        printf("%d", num);
     }else if (guess < num){
         printf("\nWay down there?!\n");
     }else{
@@ -52,12 +57,25 @@ void displayRand(){
     pauseProgram();
 }
 
+void goodbye(){
+    title("Random Number");
+    if(num == guess){
+        printf("\n\n%36sGood Job!", "");
+    }else{
+        printf("\n\n%30sTry again next time!", "");
+        printf("\n%31sThe answer was: %d", "",num);
+    }
+    printf("\n\n%30sProgram by: Bill Bai", "");
+}
+
 main(){
+    randNum();
     do{
         userInput();
-        displayRand();
-        if(num == guess){
-            break;
-        }
-    }while(1);
+        numOfGuesses++;
+        display();
+    }while(num != guess && numOfGuesses < 3);
+
+    goodbye();
+    pauseProgram();
 }
