@@ -32,6 +32,13 @@ void userInput(){
     printf("Enter a number between 1 and 100: ");
     scanf("%d", &guess);
     getchar();
+    if(guess < 1 || guess > 100){
+        printf("That number is out of range!\n");
+        pauseProgram();
+        userInput();
+    }else{
+        numOfGuesses++;
+    }
 }
 
 void randNum(){
@@ -47,7 +54,6 @@ void display(){
     title("Random Number");
     if(guess > num){
         printf("\nCome down!\n");
-        printf("%d", num);
     }else if (guess < num){
         printf("\nWay down there?!\n");
     }else{
@@ -72,7 +78,6 @@ main(){
     randNum();
     do{
         userInput();
-        numOfGuesses++;
         display();
     }while(num != guess && numOfGuesses < 3);
 
