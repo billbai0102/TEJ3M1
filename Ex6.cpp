@@ -1,7 +1,7 @@
 /*
     Name: Bill
     Teacher: Mr. Wong
-    Date: 2019-11-20
+    Date: 2019-11-21
     This program uses loops and the rand() method to create a 
      number guessing game.
 */
