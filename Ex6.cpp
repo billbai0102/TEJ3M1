@@ -22,7 +22,7 @@ void pauseProgram(){
     getchar(); // Pauses program until enter key is pressed
 }
 
-// Prints program title
+// Clears screen and prints program title
 void title(char* programTitle){
     int len = strlen(programTitle); // len stores the length of the string programTitle
     system("cls"); // Clears screen
